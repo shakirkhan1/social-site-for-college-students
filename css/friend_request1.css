@@ -1,0 +1,15 @@
+.friend-request-container{
+     
+    width: 100%;
+    margin: 0px auto;
+    margin-top: 5%;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.friend-request-messages{
+    margin: 0px auto;
+    width:100%;
+    font-size: 15px;
+    
+}

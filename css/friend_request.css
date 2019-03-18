@@ -1,0 +1,32 @@
+.header{
+    margin: 0px auto;
+    width: 20%;
+    font-size: 44px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.friend-request-container{
+    border: 2px solid grey; 
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 5%;
+    min-height: 25px;
+}
+
+.friend-request-messages{
+    margin: 0px auto;
+    width:70%;
+    font-size: 30px;
+}
+
+.goback-btn{
+    float:right;
+    margin-right: 10%;
+    font-size: 30px;
+    margin-top: -3%;
+    transition: 0.4s;
+}
+.goback-btn:hover{
+   background-color: darkgray;
+    transition: 0.4s;
+}

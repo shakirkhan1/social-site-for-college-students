@@ -1,0 +1,97 @@
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: coral;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    
+    background: #555; 
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: lightgrey;
+}
+#edit_btn{
+    float:right;
+    font-size:20px;
+    transition: 0.5s;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 5px outset lightsalmon;
+    background-color: azure;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+#edit_btn:hover{
+   background-color: lightsalmon;
+    border: 5px outset azure;
+    
+}
+
+
+#delete_btn{
+    float:right;
+    font-size:20px;
+    transition: 0.5s;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 5px outset lightsalmon;
+    background-color: azure;
+    margin-right: 5px;
+    margin-left: 15px;
+    margin-top: -10px;
+}
+
+#delete_btn:hover{
+   background-color: lightsalmon;
+    border: 5px outset azure;
+    
+}
+
+.post_box{
+    padding-top: 100px;
+    margin: 0px auto;
+    width: 600px;
+    height: 600px;
+}
+.post_title{
+    width: 582px;
+    height: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.submit_post{
+    text-transform: capitalize;
+    font-size: 20px;
+    width: 100px;
+}
+
+#display_post_title{
+margin: 0px auto;
+    width: 500px;
+    height: 20px;
+    border: 2px solid blue;
+}
+
+.all_post{
+    margin-top: 30px;
+    
+}
+

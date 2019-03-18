@@ -1,0 +1,191 @@
+#top{
+  width:700px;
+  margin: 70px auto;
+    margin-bottom: -50px;
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;; /*animation behaviour*/
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-name: slideInFromLeft;
+  padding-bottom: 10px;
+
+}
+
+#main{
+    width: 500px;
+    margin: 30px auto;
+    background: #D2D2D3;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #00b894;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft1 {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.main_register{
+  animation-duration: 1s;
+  animation-timing-function: easy-in-out ; /*animation behaviour*/
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-name: slideInFromLeft1;
+
+  padding-bottom: 10px;
+
+}
+
+.main_login{
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInFromRight;
+    padding-bottom: 10px;
+  }
+
+
+
+
+
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+.login-img {
+    width:100px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.myform {
+	width:450px;
+	margin:0px auto;
+}
+
+
+.inputvalues {
+
+  margin-top: 5px;
+  margin-bottom: 10px;
+	width:430px;
+
+	padding: 5px;
+	font-size: 18px;
+}
+
+.login_btn{
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color:#576574;
+	padding:10px;
+	width:100%;
+	color:white;
+	text-align:center;
+	font-size: 18px;
+	font-weight:bold;
+  transition: 0.5s;
+}
+
+.login_btn:hover{
+  cursor: pointer;
+  background-color: #2ed573;
+}
+
+.register_btn{
+	margin-top:10px;
+	margin-bottom:10px;
+	background-color:#576574;
+	padding:10px;
+	width:100%;
+	color:white;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+  transition: 0.5s;
+
+}
+
+.register_btn:hover {
+  background-color: #2ed573;
+  cursor: pointer;
+}
+
+
+.signin_btn{
+
+    margin-top:10px;
+	margin-bottom:10px;
+	background-color:#576574;
+	padding:10px;
+	width:25%;
+	color:white;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+    transition: 0.5s;
+}
+
+.signin_btn:hover{
+  cursor: pointer;
+  background-color: #2ed573;
+}
+
+#logout_btn {
+    margin-top:10px;
+
+	background-color:#fc5c65;
+	padding:10px;
+	width:100%;
+	color:white;
+	text-align:center;
+	font-size:18px;
+	font-weight:bold;
+}
+
+#warning {
+	display: none;
+	color: red;
+}
+
+#warning1 {
+	display: none;
+	color: red;
+}
+
+#warning2{
+  display: none;
+  color:red;
+}

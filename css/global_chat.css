@@ -1,0 +1,39 @@
+#message_area_online_users{
+	border:2px solid;
+}
+#whole_body{
+	border: 2px solid orange;
+}
+#auto{
+	
+	margin: 23px;
+	width: 250px;
+	height:auto;
+	border: 2px solid green;
+	float:left;
+}
+#message_area {
+	border:2px solid blue;
+	margin: 0px auto;
+	background-color:lightgrey;
+	width:98%;
+	height:450px;
+}
+
+#main{
+	border:2px solid red;
+	margin: 50px auto;
+	background-color:lightgrey;
+	width:600px;
+	height:550px;
+	
+}
+.message_scroll
+{
+    max-height: 450px;
+    overflow-y: scroll;
+}
+
+#total_online_users{
+	font-size:22px;
+}

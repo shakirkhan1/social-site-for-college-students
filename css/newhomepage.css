@@ -1,0 +1,91 @@
+#main{
+/*    border: 3px solid yellow; */
+}
+
+.header{
+/*    border: 3px solid red; */
+    height: 170px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    
+}
+
+.photo{
+/*    border: 2px dashed blue; */
+    width:150px;
+    text-align: center;
+	height: 162px;
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+    
+}
+
+.image{
+/*    border: 3px solid brown; */
+    border-top-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-bottom-left-radius: 25%;
+}
+.welcome_message{
+    font-size:64px;
+    text-transform:capitalize;
+/*    border: 2px solid orange; */
+    max-width: 50%;
+    margin-left: 25%;
+    margin-top: -155px;
+    text-align: center;
+    padding: 20px;
+}
+.navigation_bar{
+    border: 2px solid black;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 5%;
+    
+}
+.middle_body{
+/*    border: 2px solid green; */
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    min-height: 500px;
+    display: inline-block;
+}
+.post_body{
+    text-align:left; 
+    height:750px;
+    width:50%;
+    margin-top: 20px;
+    margin-left:50px;
+    margin-right:50px;
+    overflow:auto;
+    
+}
+.users_display{
+    width: 25%;
+    margin-left: 15%;
+    margin-right: 5%;
+/*    border: 2px solid black; */
+    float: right;
+    margin-top: -750px;
+    height: 750px;
+}
+.online_users{
+    border:2px solid brown;
+    margin-top: 20px;
+    margin-right:5%;
+    margin-left: 5%;
+    width: 90%;
+    height: 730px;
+    overflow-y: auto;
+}
+
+

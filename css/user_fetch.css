@@ -1,0 +1,12 @@
+.user-img{
+    border-radius: 50%;
+}
+.user-details{
+position: relative;
+    width: 50%;
+    margin-left: 85px;
+    margin-top: -70px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 20px;
+}

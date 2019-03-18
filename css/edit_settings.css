@@ -1,0 +1,82 @@
+#main{
+  border: 5px solid green;
+  margin:200px auto;
+  width: 550px;
+  height: 650px;
+}
+.heading{
+  margin: 5px;
+  width: auto;
+  min-height:40px ;
+  font-size:25px;
+}
+.heading1{
+  border:3px dotted red;
+  width: auto;
+  min-height:40px ;
+  font-size:25px;
+  text-align: center;
+}
+#user_form_detail{
+  margin: 2px;
+  /*border: 3px dotted brown;*/
+  width: auto;
+  height: 325px;
+}
+.labels{
+  margin-top:20px;
+  margin-left: 20px;
+  font-size: 25px;
+  max-width:150px;
+  height: auto;
+  padding: 2px;
+}
+.labels1{
+  
+  margin-top:30px;
+  margin-left: 20px;
+  font-size: 25px;
+  max-width:150px;
+  height: auto;
+  float: left;
+}
+.column_left{
+  float: left;
+  margin: 10px;
+}
+.details{
+  margin-top:20px;
+  margin-left: 20px;
+  font-size:22px;
+  width: auto;
+  
+}
+.details1{
+  margin-top: 30px;
+  height: 20px;
+  
+}
+.column{
+  float: right;
+  height: auto;
+  margin: 10px;
+}
+
+#edit_settings1{
+  font-size: 15px;
+    margin-left: 0px;
+}
+#edit_settings2{
+  font-size: 15px;
+  float: right;
+    margin-top: -22px;
+    
+}
+#edit_settings1:hover{
+	background-color:#576574;
+	cursor:pointer;
+}
+#edit_settings2:hover{
+	background-color:#576574;
+	cursor:pointer;
+}
