@@ -14,36 +14,54 @@ if(!isset($_SESSION['username']))
     <meta charset="UTF-8">
     <title>Post</title>
     <link rel="stylesheet" href="css/post.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
- 
+
 <body>
-   
-    <div class="post_box">
-        <form method="post" action='post.php'>
-            <input type="text" name="post_title" placeholder="Your Post Title....." class="post_title">
-            <textarea name="post_message" placeholder="Type Your Post Here....." rows="10" cols="64" style="padding-left:30px;padding-right:20px;padding-top:20px;border:5px dashed orange;font-size:15px;"></textarea><br>
-            <input name="submit_post" type="submit" value="post" class="submit_post">
+    <div class="ui container">
+        <div class="ui raised segment" style="margin-top: 2%;">
+            <form action="post.php" method="post" class="ui form" style="margin-top: 2%;margin-bottom: 2%;">
+                <div class="ui grid" style="margin-left: 20%;">
+                    <div class="eleven wide column">
+                        <div class="field">
+                            <label for="post_title">
+                                <h2> Post Title: </h2>
+                            </label><br>
+                            <input type="text" name="post_title" placeholder="Your Post Title...." required>
+                        </div><br>
+                        <label for="post_message">
+                            <h2>Post:</h2>
+                        </label><br>
+                        <textarea id="" cols="30" rows="10" placeholder="Type Your Post Here...." name="post_message" required></textarea> <br><br><br>
+                        <div class="ui right icon input">
+                            <input type="submit" name="submit_post" value="Post" class="ui inverted blue massive button">
+                            <i class="write large blue icon"></i>
+                        </div>
+                        <div class="ui button orange massive inverted" onclick="window.location.href='homepage.php'" style="margin-left: 2%;">Click here to go back</div>
+                    </div>
+                </div>
             </form>
-            <div class="all_post">
-                <h1 align="center"> My Posts</h1>
-                <div class="all_post_body">
-                  
-                   
-                    <?php 
+        </div>
+
+        <br><br>
+        <div class="ui divider"></div> <br><br>
+
+        <?php 
     
     $username=$_SESSION['username'];
     $fullname=$_SESSION['fullname'];
-    //echo $username;
-    //echo $fullname;
     $query_all_posts="SELECT * FROM `posts` WHERE username='$username' ORDER BY date DESC";
     $result=mysqli_query($con, $query_all_posts);
     if(mysqli_num_rows($result)==0)
     {
         echo '<br>';
-        echo '<h1 align="center">'."No Post Yet".'</h1>';
+        echo '<h1 align="center" class="ui header">'."No Post Yet!".'</h1>';
     }
     else
     { //echo mysqli_num_rows($result);
+        echo '<h1 class="ui header" style="text-align:center;font-size:50px;">My Posts</h1>';
         while($row=mysqli_fetch_assoc($result))
         {
             $post_id=$row['post_id'];
@@ -54,21 +72,24 @@ if(!isset($_SESSION['username']))
             $date1=$row['date'];
             $date2=chat_time_ago($date1);
             $post_title=$row['post_title'];
-            echo '<div style="border:2px solid yellow;">
-            <div style="margin:0px auto;width:500px;height:auto;">
-            <form action="edit_post.php" method="post" ><p style="text-transform:capitalize;font-size:30px;">'.$post_title.'
-            <input type="submit" name="edit_post" value="Edit" id="edit_btn"></p>
-            <input type="hidden" name="post_id" value="'.$post_id.'"></form>
-            '.
-            '<form action="post.php" method="post" ><p>'.$date2.'
-            <input type="submit" name="delete_post" value="Delete" id="delete_btn">
-            <input type="hidden" name="post_id" value="'.$post_id.'">
-            </p></form></div></div>';
-            echo '<div style="border:2px solid grey;"><p></p>';
-            echo '<div style="margin:0px auto;width:500px;height:auto;"><p style="text-transform:uppercase;font-size:25px;">'.$post.'</p></div><br><br></div>';
-            echo '<br><br><br>';
-            
+            echo '<div class="ui segments">
+                    <div class="ui segment">
+                     <form action="edit_post.php" method="post"><p style="text-transform:capitalize;font-size:30px;">'.$post_title.'
+                        <input type="submit" name="edit_post" value="Edit" class="ui green inverted button" style="float: right;"></p>
+                        <input type="hidden" name="post_id" value="'.$post_id.'">
+                     </form>
+                     <form action="post.php" method="post" ><p>'.$date2.'
+                            <input type="submit" name="delete_post" value="Delete" id="" class="ui red inverted button" style="float: right;margin-top:-2%;">
+                            <input type="hidden" name="post_id" value="'.$post_id.'"></p>
+                    </form>
+                    </div>
+                    <div class="ui segment">
+                        <p class="ui content" style="font-size: 25px;">'.$post.'</p>
+                    </div>
+                   </div><br><br>
+                   <div class="ui divider"></div> <br>';
         }
+       echo '<div class="ui header" style="text-align: center"> No More Post Found!! </div>';
         
     }
 //+++++++++++++++++++++++++++ Submitting a post +++++++++++++++++++++++++++++++++++++++
@@ -169,12 +190,9 @@ if(!isset($_SESSION['username']))
            }
        }                  
     ?>
-
-                </div>
-            </div>
-        
+        <br><br>
     </div>
-    
+
 </body>
 
 </html>

@@ -10,15 +10,17 @@ if(!isset($_SESSION['username']))
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title><?php echo $_SESSION['fullname']." Friend Request" ?></title>
     <link rel="stylesheet" type="text/css" href="css/friend_request1.css">
 </head>
+
 <body>
     <div class="friend-request-container">
         <div class="friend-request-messages">
-           
+
             <?php
                 $username = $_SESSION['username'];
                 $q2="UPDATE `friendrequest` SET seen='1' WHERE receiver='$username'";
@@ -49,17 +51,21 @@ if(!isset($_SESSION['username']))
                          {
                              $sender_img=$row1['imagelink'];
                          }
-                    echo '
-                    <a style="text-decoration:none;float:left;color:black;text-transform:capitalize;" href="view_profile.php?username='.$sender.'"><img src='.$sender_img.' width="50px" height="50px" style="border-radius:50%;">'.$sender.'</a><br><br><br><br>';
-                    echo '<div class="accept-btn"><a style="text-decoration:none;color:black;float:left;" href="add_friend.php?accept='.$row['sender'].'">Confirm</a>&nbsp;&nbsp;<a class="delete-btn" style="text-decoration:none;color:black;margin-top:-45px;" href="delete_friend_request.php?accept='.$row['sender'].' ">Delete</a></div><br>';
+                    echo '<div class="ui segment" style="width:90%;">
+                    <a style="text-transform:capitalize;" href="view_profile.php?username='.$sender.'">
+                    <img src='.$sender_img.' width="50px" height="50px" style="border-radius:50%;">'.$sender.'
+                    </a><br><br>';
+                    echo '<div class="accept-btn">
+                    <a style="float:left;" class="ui green large button" href="add_friend.php?accept='.$row['sender'].'">Confirm</a>&nbsp;&nbsp;<a class="delete-btn ui red large button" href="delete_friend_request.php?accept='.$row['sender'].' ">Delete</a></div><br><br></div>';
                     } 
                 }
                 else
                 {
-                    echo '<center>No Friend Requests Pending</center>';
+                    echo '<center class="ui header">No Friend Requests Pending</center>';
                 }
             ?>
         </div>
-     </div>
+    </div>
 </body>
+
 </html>

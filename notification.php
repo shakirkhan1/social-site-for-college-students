@@ -1,4 +1,4 @@
- <?php 
+<?php 
   
   include 'dbconfig/config.php';
   session_start();
@@ -10,11 +10,11 @@ if(!isset($_SESSION['username']))
   $zero = 0;
   $uname = $_SESSION['username'];
   // echo $uname ;  
- //===================================================================================
- //                           FOR UPDATE                         //
- //===================================================================================
+ //============================================================================================
+ //                             FOR UPDATE                                                   //
+ //========================================================================================
   if($_POST["view"] != '')
-  { 
+  {
     // update notification for posts viewed    
     $update_query =" update notification set notification_status = $one where notification_status =$zero and username = '$uname' ";
   	  mysqli_query($con, $update_query);

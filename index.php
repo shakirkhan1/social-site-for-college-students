@@ -8,48 +8,32 @@ require 'dbconfig/config.php';
 <head>
     <title> Login page </title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/login_slide.css">
-   </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</head>
 
 <body style="background-color:#96ceb4;">
-    <!--#718093 -->
-    <div id="whole_body">
-        <div id="hit_me">
-            <a href="#" onclick="slideopen()">
-                <svg width="30px" height="30px">
-                    <path d="M0,5 30,15" stroke="white" stroke-width="5" />
-                    <path d="M0,23 30,15" stroke="white" stroke-width="5" />
-                </svg></a>
+    <div class="ui container">
+        <div class="ui segment raised huge label" style="float:left;margin-left: 40%;margin-top: 15%;width: 42%;text-align: center;">
+            Welcome To the Social Site
         </div>
-
-        <div id="left_slide">
-            <div id="btn_close">
-                <a href="#" onclick="slideclose()" style="text-decoration:none; color:#f9ccac;">&times;
-                </a>
-            </div>
-            <div id="about_developer">
-                <a href="#" style="text-decoration:none; color: #f9ccac;">About Developer</a>
-            </div>
-        </div>
-        <div id="top">
-            <center>
-                <p>Welcome To the Social Site </p>
-            </center>
-        </div>
-        <div id="main" class="main_login">
+        <div class="ui segment raised label" style="margin-left: 40%;margin-top: 1%;">
             <center>
                 <h2> Login Page </h2>
                 <img src="imgs/login.png" class="login-img">
             </center>
 
-            <form class="myform" action="index.php" method="post">
-                <i class="fa fa-user"><label style="font-size: 22px"><b> Username:</b></label></i><br>
-                <input name="username" type="text" class="inputvalues" placeholder="Username" required><br>
-                <i class="fa fa-key"><label style="font-size: 22px"><b> Password:</b></label></i><br>
+            <form class="myform ui form" action="index.php" method="post">
+
+                <label for="username" style="font-size: 22px;font-weight: bold;"> Username:</label><br>
+                <input name="username" type="text" class="inputvalues" placeholder="Username" required><br><br><br>
+                <label style="font-size: 22px"><b> Password:</b></label>
                 <input name="password" type="password" id="pass1" class="inputvalues" placeholder="Password" required><br>
                 <p id="warning">WARNING! Caps lock is ON.</p>
-                <input name="login" type="submit" class="login_btn" value="Login"><br>
-                <a href="register.php"><input type="button" class="register_btn" value="Register"></a>
+                <input name="login" type="submit" class="ui green inverted fluid large button" value="Login" style="margin-top: 5%;"><br>
+                <a href="register.php">
+                    <input type="button" class="ui blue inverted fluid large button" value="Register"></a>
 
             </form>
             <?php
@@ -85,6 +69,7 @@ require 'dbconfig/config.php';
 
         </div>
     </div>
+
     <!-- For CapsLock -->
     <script>
         var input = document.getElementById("pass1");
@@ -104,17 +89,6 @@ require 'dbconfig/config.php';
     </script>
 
     <!-- ------------------------------------  -->
-    <script type="text/javascript">
-        function slideopen() {
-            document.getElementById('left_slide').style.width = '110px';
-            document.getElementById('hit_me').style.marginLeft = '110px';
-        }
-
-        function slideclose() {
-            document.getElementById('left_slide').style.width = '0px';
-            document.getElementById('hit_me').style.marginLeft = '0px';
-        }
-    </script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@ if(!isset($_SESSION['username'])){
 $username=$_SESSION['username'];
 $post_id2=$_POST['post_id2'];
 //echo $_POST['post_id2'];
-$count=1; 
+$count=1;
 $sql1="SELECT * FROM `likepage` where post_id='$post_id2' and username='$username'";
 $result1=mysqli_query($con,$sql1);
 if(mysqli_num_rows($result1)==0)
@@ -19,17 +19,17 @@ $sql="INSERT INTO `likepage` VALUES('','$post_id2','$username','$count')";
 $result=mysqli_query($con,$sql);
 
 //===============================================================================================
-//        GETTING LIKE ID AFTER INSERTION                             //
+//                                 GETTING LIKE ID AFTER INSERTION                             //
 
 	$get_like_id = " select id from likepage where post_id ='$post_id2' and username ='$username' ";
 	$get_like_id1 = mysqli_query($con,$get_like_id);
     while( $rr =mysqli_fetch_array($get_like_id1) )
     {
          $like_id = $rr['id'] ;
-         break;   
+         break;
     }
     echo '<script> alert("'.$like_id.'") </script>';
-//            GETTING OWNERNAME    FOR THIS POST                           //
+//                               GETTING OWNERNAME    FOR THIS POST                           //
     $ret_post_id = " select username from posts where post_id = '$post_id2' ";
     $ret_post_id1 = mysqli_query($con,$ret_post_id);
 

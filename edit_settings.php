@@ -90,37 +90,48 @@ else
 	}
 }
 ?>
+   <?php 
+		  if(isset($_POST['profile']))
+		  {
+			  header("location:profile.php");
+		  }
+		  ?>
 <!DOCTYPE html>
 <html>
   <head>
     <title> Profile </title>
-	<link rel="stylesheet" type="text/css" href="css/edit_settings.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <div id="main" style=" border: 5px solid green;
-  margin:200px auto;
-  width: 550px;
-  height: 650px;">
-      <div class="heading">
-        <form action="edit_settings.php" method="post">
-		  <input type="submit" id="edit_settings1" name="Home_page" value="Home Page" style="font-size: 25px;
-    margin-left: 0px;">
-		  <?php 
-		  if(isset($_POST['Home_page']))
-		  {
-			  header("location:homepage.php");
-		  }
-		  ?>
-		  </form>
-      </div>
-      <div class="heading1">
-        <p style="margin-left:10px;"> Edit Details </p>
-      </div>
-      
-       <div style="margin-left:40%;">
-                <?php // echo '<img id="uploadPreview" alt="Upload Photo" class="login-img" style="border-radius:50%;width:150px;height:150px;" src="'.$_SESSION['imglink'].'">';?>
-                <img id="uploadPreview" alt="Upload Photo" class="login-img" style="border-radius:50%;width:150px;height:150px;" src="<?php 
+       <div class="ui container" style="margin-top: 5%;">
+          <div class="ui raised segment">
+      <form action="profile.php" method="post" class="ui form">
+          <div class="ui grid">
+                <div class="row">
+                <div class="four wide column">
+                  <div class="field">
+                    <div class="ui input left icon">
+                     <input type="submit" class="ui massive button inverted orange" name="Home_page" value="Home Page">
+                        <i class="home large icon"></i>
+                          <?php 
+                          if(isset($_POST['Home_page']))
+                          {
+                              header("location:homepage.php");
+                          }
+                          ?>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+              </form>
+              <div class="ui huge header" style="margin: 0 auto;">
+                Edit Details
+              </div>
+              <div class="row">
+                <img id="uploadPreview" style="width: 150px; height: 150px;" class="ui circular centered image" alt="Upload Photo" class="login-img" style="border-radius:50%;width:150px;height:150px;" src="<?php 
                $q1='SELECT * from `user` WHERE username="'.$_SESSION['username'].'"';
                 $result=mysqli_query($con,$q1);
                 $row=mysqli_fetch_assoc($result);
@@ -140,43 +151,62 @@ else
                          echo $row['imagelink'];
                      }                                                              
                ?>">
-        </div>
-        <div class="labels1">
-          <br>
-           <label class="labels column_left"> Full Name: </label>
-		   <label class="labels column_left"> Username: </label>
-          <label class="labels column_left"> Gender: </label>
-		   <label class="labels column_left"> Email: </label>
-           <label class="labels column_left"> Mobile No: </label>
-        </div>
-         <form action="edit_settings.php" method="post" enctype="multipart/form-data">
-	             <input type="file" id="imglink" name="imglink" accept=".jpg, .jpeg, .png" onchange="PreviewImage();" />
-       <div class="details1">
-	            
-        <input class="details column" name="fullname" type="text" pattern=".{3,20}" required title="Name Should Contain atleast 3 letters" value="<?php echo $fullname;?>">
-		
-		<input class="details column" name="username" type="text" value="<?php echo $username;?>" disabled>
-		
-		<input class="details column" name="gender" pattern="[a-zA-Z]{4,6}" required title="enter MALE or FEMALE" type="text" value="<?php echo $gender;?>">
-		
-		<input class="details column" name="email" required maxlength="30" type="text" placeholder="xyz@gmail.com" value="<?php echo $email;?>">
-        
-        <input class="details column" name="mobile_no" type="text" pattern=".{10,10}" title="Enter a valid number" maxlength= "10" value="<?php echo $mobile_no;?>">
-               </div>
+              </div>
+              <form action="edit_settings.php" method="post" enctype="multipart/form-data" class="ui form" style="margin: 0 auto;">
+                  <div class="field" style="margin: 0 auto;font-size: 15px;">
+                      <div class="ui right icon input">
+                          <input type="file" id="imglink" name="imglink" accept=".jpg, .jpeg, .png" onchange="PreviewImage();" class="ui green label"/> 
+                          <i class="upload large arrow icon"></i>
+                      </div>
+                  </div>
+                  <div class="row" style="margin-top: 5%;">
+                      <div class="inline field" style="margin: 0 auto;font-size: 20px;">
+                        <input type="text" value="Fullname" class="ui label" disabled>
+                        <input name="fullname" type="text" pattern=".{3,20}" required title="Name Should Contain atleast 3 letters" value="<?php echo $fullname;?>">
+                      </div>  
+                  </div>
+                  <div class="row" style="margin-top: 1%;">
+                      <div class="inline field" style="margin: 0 auto;font-size: 20px;">
+                        <input type="text" value="Username" class="ui label" disabled>
+                        <input name="username" type="text" pattern=".{3,20}" required title="Name Should Contain atleast 3 letters" value="<?php echo $username;?>" disabled>
+                      </div>
+                  </div>
+                   <div class="row" style="margin-top: 1%;">
+                      <div class="inline field" style="margin: 0 auto;font-size: 20px;">
+                        <input type="text" value="Gender" class="ui label" disabled>
+                        <input name="gender" type="text" name="gender" pattern="[a-zA-Z]{4,6}" required title="Enter MALE or FEMALE" value="<?php echo $gender;?>">
+                      </div>
+                  </div>
+                   <div class="row" style="margin-top: 1%;">
+                      <div class="inline field" style="margin: 0 auto;font-size: 20px;">
+                        <input type="text" value="Email" class="ui label" disabled>
+                        <input name="email" required maxlength="30" type="text" placeholder="xyz@gmail.com" value="<?php echo $email;?>">
+                      </div>
+                  </div> 
+                   <div class="row" style="margin-top: 1%;">
+                      <div class="inline field" style="margin: 0 auto;font-size: 20px;">
+                        <input type="text" value="Mobile No." class="ui label" disabled>
+                        <input name="mobile_no" type="text" pattern=".{10,10}" title="Enter a valid number" maxlength= "10"  value="<?php echo $mobile_no;?>">
+                      </div>
+                  </div> 
+                  
+	            </div> <!-- ui grid -->
+              <br>
+          <div class ="ui compact" style="text-align: center;margin-top: 4%;">
+           <input type="submit" name="submit" value="Update" class="ui massive purple button">
+		  <input type="submit" name="profile" value="Click here to go back" class="ui orange massive button">
+          </div>
+         
+     </form>
+              
+       </div> <!-- Ui segment -->
+    </div> <!-- ui Container -->
       
-	  <div id="edit_settings">
-     <br><br>
-      <input type="submit" id="edit_settings1" name="submit" value="Submit" style="font-size: 25px;margin-left: -140px;margin-top:220px;">
-		  <input type="submit" id="edit_settings2" name="profile" value="Click here to go back" style="font-size: 25px;
-  float: right;margin-top: -35px;">
-		  <?php 
-		  if(isset($_POST['profile']))
-		  {
-			  header("location:profile.php");
-		  }
-		  ?>
-		  </div>
-		  </form>
+    <div id="main" style=" border: 5px solid green;
+  margin:200px auto;
+  width: 550px;
+  height: 650px;">
+         
         
        </div>
        <!-- For PreviewImage -->

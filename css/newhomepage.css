@@ -59,16 +59,7 @@
     min-height: 500px;
     display: inline-block;
 }
-.post_body{
-    text-align:left; 
-    height:750px;
-    width:50%;
-    margin-top: 20px;
-    margin-left:50px;
-    margin-right:50px;
-    overflow:auto;
-    
-}
+
 .users_display{
     width: 25%;
     margin-left: 15%;

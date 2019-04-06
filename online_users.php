@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="css/global_chat.css">
+    <link rel="stylesheet" type="text/css" href="css/global_chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </head>
+
 <body>
-<?php 
+    <?php 
 session_start();
 require 'dbconfig/config.php';
 require 'dbconfig/db_online.php'; //it is just written for practice no need to write here.
 ?>
-<?php 
+    <?php 
 //$users = array();
 if(isset($_SESSION['username'])) //here we are checking whethere a user is logged on or not on the messaging page
 {
@@ -37,20 +42,27 @@ if($count=="0"){
  $sql3 = "SELECT * FROM `online_users` where session!='$session'";
  $result3 = mysqli_query($con1,$sql3); 
  $count_user_online = mysqli_num_rows($result3); //counting total users
- echo "<b id=total_online_users>Total Users Online :  $count_user_online </b><br>"; 
- 
+ echo "<b style='font-size:1.5em;'><center>Total Users Online :  $count_user_online </center></b><br>"; 
  $query2="select session from `online_users` where session!='$session'";
  $result_query2=mysqli_query($con1,$query2);
  $no_of_user=$count_user_online;
  if($result)
  {
+  echo "<div class='ui segment' style='text-transform: capitalize;font-size: 1em;max-height: 50%;overflow:hidden;overflow-y: scroll;text-align: center;'>";
+     if($no_of_user == "0"){
+         echo "<b style='font-size:1.5em;'><center>No User Online!</center></b><br>"; 
+     }
  while($row=mysqli_fetch_row($result_query2))
- {echo "<b id=total_online_users>Users Online</b><br>";
+ {
+     
 	 foreach($row as $rows)
 	 {
-		 echo $rows.'<br>';
+         echo $rows;
 	 }
+     echo "<div class='ui divider'></div>";
+     
  }
+     echo "</div>";
  }
  // after 1 sec, session will be deleted 
          $sql4 = "DELETE FROM `online_users` WHERE time<$time_check";  //deleting users 
@@ -58,5 +70,6 @@ if($count=="0"){
 //mysqli_close($con1);
 }
  ?>
- </body>
+</body>
+
 </html>
